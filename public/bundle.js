@@ -48,12 +48,12 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
-	var Greeter = __webpack_require__(159);
 
-	var name = 'Mike';
-	var message = 'This is a cool message';
-
-	ReactDOM.render(React.createElement(Greeter, { name: name, message: message }), document.getElementById('app'));
+	ReactDOM.render(React.createElement(
+	    'h1',
+	    null,
+	    'Boilerplate App!'
+	), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -19711,146 +19711,6 @@
 	'use strict';
 
 	module.exports = __webpack_require__(3);
-
-/***/ },
-/* 159 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-	var GreeterMessage = __webpack_require__(160);
-	var GreeterForm = __webpack_require__(161);
-
-	var Greeter = React.createClass({
-	    displayName: 'Greeter',
-
-	    getDefaultProps: function getDefaultProps() {
-	        return {
-	            name: 'React',
-	            message: 'This is a default message'
-	        };
-	    },
-
-	    getInitialState: function getInitialState() {
-	        return {
-	            name: this.props.name,
-	            message: this.props.message
-	        };
-	    },
-
-	    handleFormUpdate: function handleFormUpdate(update) {
-	        this.setState({
-	            name: update.name.length > 0 ? update.name : this.props.name,
-	            message: update.message.length > 0 ? update.message : this.props.message
-	        });
-	    },
-
-	    render: function render() {
-	        var name = this.state.name;
-	        var message = this.state.message;
-	        return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(GreeterMessage, { name: name, message: message }),
-	            React.createElement(GreeterForm, { onFormUpdate: this.handleFormUpdate })
-	        );
-	    }
-	});
-
-	module.exports = Greeter;
-
-/***/ },
-/* 160 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-
-	var GreeterMessage = React.createClass({
-	    displayName: 'GreeterMessage',
-
-	    render: function render() {
-	        var name = this.props.name;
-	        var message = this.props.message;
-	        return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(
-	                'h1',
-	                null,
-	                'Hello, ',
-	                name,
-	                '!'
-	            ),
-	            React.createElement(
-	                'p',
-	                null,
-	                message
-	            )
-	        );
-	    }
-	});
-
-	module.exports = GreeterMessage;
-
-/***/ },
-/* 161 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-
-	var GreeterForm = React.createClass({
-	    displayName: 'GreeterForm',
-
-	    onFormSubmit: function onFormSubmit(e) {
-	        e.preventDefault();
-
-	        var update = {
-	            name: this.refs.name.value,
-	            message: this.refs.message.value
-	        };
-
-	        this.refs.name.value = '';
-	        this.refs.message.value = '';
-
-	        this.props.onFormUpdate(update);
-	    },
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(
-	                'form',
-	                { onSubmit: this.onFormSubmit },
-	                React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement('input', { type: 'text', ref: 'name', placeholder: 'Enter Name...' })
-	                ),
-	                React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement('textarea', { ref: 'message', placeholder: 'Enter Message...' })
-	                ),
-	                React.createElement(
-	                    'div',
-	                    null,
-	                    React.createElement(
-	                        'button',
-	                        null,
-	                        'Submit'
-	                    )
-	                )
-	            )
-	        );
-	    }
-	});
-
-	module.exports = GreeterForm;
 
 /***/ }
 /******/ ]);
