@@ -1,18 +1,15 @@
 var React = require('react');
 
-var WeatherMessage = React.createClass({
-    render: function () {
-        var searchLocation = this.props.searchLocation;
-        var message = searchLocation.length > 0
-            ? 'You searched for ' + searchLocation + '.'
-            : '';
-
-        return(
-            <div>
-                <p>{message}</p>
-            </div>
-        )
+var WeatherMessage = ({temp, location}) => {
+    var message = 'Search for your city\'s current temperature!';
+    if(location.length > 0) {
+        message = `It is ${temp} in ${location}.`
     }
-});
+    return(
+        <div>
+            <p>{message}</p>
+        </div>
+    )
+};
 
 module.exports = WeatherMessage;

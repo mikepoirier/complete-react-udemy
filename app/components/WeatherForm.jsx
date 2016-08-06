@@ -5,8 +5,10 @@ var WeatherForm = React.createClass({
         e.preventDefault();
 
         var search = this.refs.search.value;
-
-        this.props.onFormUpdate(search);
+        if(search.length > 0) {
+            this.refs.search.value = '';
+            this.props.onFormUpdate(search);
+        }
     },
 
     render: function () {
