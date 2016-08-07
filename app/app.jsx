@@ -7,8 +7,8 @@ var Main = require('./components/Main');
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
-// App CSS
-require('style!css!sass!app/styles/app.scss');
+// App styles (using alias in webpack.config.js)
+require('style!css!sass!appStyle');
 
 ReactDOM.render(
     <Router history={hashHistory}>
