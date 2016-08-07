@@ -13,6 +13,7 @@ require('style!css!sass!appStyle');
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
+          <Route path="countdown"/>
         </Route>
     </Router>,
     document.getElementById('app')
